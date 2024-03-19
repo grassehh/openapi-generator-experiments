@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: OpenAPI generator Kotlin test
+  version: v1
+paths:
+  /api/polymorphism:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Parent
+              oneOf:
+                - $ref: '#/components/schemas/child1'
+                - $ref: '#/components/schemas/child2'
+              discriminator:
+                propertyName: discriminatorProperty
+                mapping:
+                  type1: 'child1'
+                  type2: 'child2'
+      responses:
+        202:
+          description: OK
+components:
+  schemas:
+    child1:
+      type: object
+      required:
+        - objectType
+      properties:
+        child1Property:
+          type: string
+    child2:
+      type: object
+      required:
+        - objectType
+      properties:
+        child2Property:
+          type: string
