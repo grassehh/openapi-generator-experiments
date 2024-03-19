@@ -21,7 +21,7 @@ tasks.compileKotlin {
 }
 
 task<GenerateTask>("openApiGenerateKotlin") {
-    generatorName.set("kotlin-spring")
+    generatorName.set("kotlin")
     inputSpec.set("openapi.yaml")
     outputDir.set("${layout.buildDirectory.asFile.get()}/generated")
     modelPackage.set("com.grassehh.api.model")
