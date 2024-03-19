@@ -2,7 +2,7 @@ import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
 
 plugins {
     kotlin("jvm") version "1.9.23"
-    id("org.openapi.generator") version "7.4.0"
+    id("org.openapi.generator") version "7.3.0"
 }
 
 group = "com.grassehh"
@@ -29,11 +29,5 @@ task<GenerateTask>("openApiGenerateKotlin") {
     generateModelDocumentation.set(false)
     generateApiTests.set(false)
     generateModelTests.set(false)
-    configOptions.set(
-        mapOf(
-            "serializationLibrary" to "jackson",
-            "dateLibrary" to "java8"
-        )
-    )
     globalProperties.set(mapOf(Pair("models", "")))
 }

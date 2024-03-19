@@ -26,14 +26,20 @@ components:
     child1:
       type: object
       required:
-        - objectType
+        - discriminatorProperty
+        - child1Property
       properties:
+        discriminatorProperty:
+          type: string
         child1Property:
           type: string
     child2:
       type: object
       required:
-        - objectType
+        - discriminatorProperty
+        - child2Property
       properties:
+        discriminatorProperty:
+          type: string
         child2Property:
           type: string
